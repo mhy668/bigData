@@ -1,0 +1,6 @@
+# 编译产物
+*.class
+*.jar
+
+# Hadoop 本地校验文件
+*.crc
