@@ -1,0 +1,28 @@
+== head -20 ==
+a1	<document07.txt,10>;<total,10>.
+a11y	<document08.txt,4>;<total,4>.
+a2	<document07.txt,6>;<total,6>.
+a3	<document07.txt,13>;<total,13>.
+aa	<document11.txt,3>;<total,3>.
+ab	<document06.txt,12>;<total,12>.
+ababababab	<document06.txt,1>;<total,1>.
+abbreviation	<document12.txt,2>;<total,2>.
+abc	<document06.txt,9>;<document12.txt,3>;<total,12>.
+abcb	<document06.txt,3>;<total,3>.
+abcbd	<document06.txt,2>;<total,2>.
+abcd	<document06.txt,2>;<total,2>.
+abe	<document05.txt,3>;<total,3>.
+abilities	<document06.txt,1>;<total,1>.
+ability	<document01.txt,1>;<document08.txt,1>;<document12.txt,1>;<total,3>.
+able	<document02.txt,1>;<document06.txt,3>;<document08.txt,3>;<document10.txt,7>;<document11.txt,5>;<document12.txt,16>;<total,35>.
+abnormally	<document12.txt,2>;<total,2>.
+aborted	<document12.txt,1>;<total,1>.
+abs	<document12.txt,10>;<total,10>.
+absence	<document02.txt,1>;<document10.txt,1>;<document12.txt,1>;<total,3>.
+
+== grep data/hadoop/mapreduce/search/index ==
+data	<document01.txt,16>;<document02.txt,75>;<document03.txt,2>;<document04.txt,7>;<document05.txt,23>;<document06.txt,1>;<document07.txt,2>;<document08.txt,9>;<document10.txt,90>;<document11.txt,98>;<document12.txt,53>;<total,376>.
+hadoop	<document01.txt,91>;<document02.txt,36>;<document03.txt,16>;<document04.txt,5>;<total,148>.
+index	<document05.txt,3>;<document06.txt,4>;<document08.txt,6>;<document09.txt,2>;<document11.txt,2>;<document12.txt,3>;<total,20>.
+mapreduce	<document01.txt,115>;<document02.txt,3>;<document03.txt,4>;<document04.txt,4>;<total,126>.
+search	<document01.txt,2>;<document02.txt,1>;<document06.txt,42>;<document08.txt,2>;<document11.txt,7>;<document12.txt,2>;<total,56>.

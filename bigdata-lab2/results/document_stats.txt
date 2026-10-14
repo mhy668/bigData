@@ -1,0 +1,13 @@
+  8239 /home/lfr/bigdata-lab2/data/documents/document01.txt
+  4711 /home/lfr/bigdata-lab2/data/documents/document02.txt
+   848 /home/lfr/bigdata-lab2/data/documents/document03.txt
+  2313 /home/lfr/bigdata-lab2/data/documents/document04.txt
+  2127 /home/lfr/bigdata-lab2/data/documents/document05.txt
+  8607 /home/lfr/bigdata-lab2/data/documents/document06.txt
+  1322 /home/lfr/bigdata-lab2/data/documents/document07.txt
+  5022 /home/lfr/bigdata-lab2/data/documents/document08.txt
+   311 /home/lfr/bigdata-lab2/data/documents/document09.txt
+ 11192 /home/lfr/bigdata-lab2/data/documents/document10.txt
+ 15901 /home/lfr/bigdata-lab2/data/documents/document11.txt
+ 57897 /home/lfr/bigdata-lab2/data/documents/document12.txt
+118490 总计
