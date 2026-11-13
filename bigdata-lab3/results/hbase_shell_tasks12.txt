@@ -1,0 +1,42 @@
+HBase Shell
+Use "help" to get list of supported commands.
+Use "exit" to quit this interactive shell.
+For Reference, please visit: https://hbase.apache.org/docs/shell
+Version 2.5.16, r33c9a36af4fb6505196dcaa084ee2cf200071475, Fri Aug 14 12:53:27 PDT 2026
+hbase:001:0> puts ""
+
+hbase:002:0> puts "########## 任务1：列出所有表的相关信息（表名、列族） ##########"
+########## 任务1：列出所有表的相关信息（表名、列族） ##########
+hbase:003:0> list
+TABLE
+Course
+SC
+Student
+TempTable
+4 row(s)
+=> ["Course", "SC", "Student", "TempTable"]
+hbase:004:0> describe 'Student'
+Table Student is ENABLED
+Student, {TABLE_ATTRIBUTES => {METADATA => {'hbase.store.file-tracker.impl' => 'DEFAULT'}}}
+COLUMN FAMILIES DESCRIPTION
+{NAME => 'info', INDEX_BLOCK_ENCODING => 'NONE', VERSIONS => '1', KEEP_DELETED_CELLS => 'FALSE', DATA_BLOCK_ENCODING => 'NONE', TTL => 'FOREVER', MIN_VERSIONS => '0', REPLICATION_SCOPE => '0', BLOOMFILTER => 'ROW', IN_MEMORY => 'false', COMPRESSION => 'NONE', BLOCKCACHE => 'true', BLOCKSIZE => '65536 B (64KB)'}
+
+1 row(s)
+Quota is disabled
+hbase:005:0> puts ""
+
+hbase:006:0> puts "########## 任务2：在终端显示指定表的全部记录 ##########"
+########## 任务2：在终端显示指定表的全部记录 ##########
+hbase:007:0> scan 'Student'
+ROW  COLUMN+CELL
+ Lisi column=info:S_Age, timestamp=2026-11-13T14:00:43.570, value=24
+ Lisi column=info:S_No, timestamp=2026-11-13T14:00:43.570, value=2015003
+ Lisi column=info:S_Sex, timestamp=2026-11-13T14:00:43.570, value=male
+ Mary column=info:S_Age, timestamp=2026-11-13T14:00:43.447, value=22
+ Mary column=info:S_No, timestamp=2026-11-13T14:00:43.447, value=2015002
+ Mary column=info:S_Sex, timestamp=2026-11-13T14:00:43.447, value=female
+ Zhangsan column=info:S_Age, timestamp=2026-11-13T14:00:43.413, value=23
+ Zhangsan column=info:S_No, timestamp=2026-11-13T14:00:43.413, value=2015001
+ Zhangsan column=info:S_Sex, timestamp=2026-11-13T14:00:43.413, value=male
+3 row(s)
+hbase:008:0> exit

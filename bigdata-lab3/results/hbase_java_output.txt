@@ -1,0 +1,57 @@
+========== 1. 创建表 ==========
+[createTable] 表 Student 已存在，先删除
+[createTable] 创建表 Student，列族: info
+[createTable] 表 Course 已存在，先删除
+[createTable] 创建表 Course，列族: info
+[createTable] 表 SC 已存在，先删除
+[createTable] 创建表 SC，列族: Score
+
+========== 2. 插入学生表 / 课程表 / 选课表数据 ==========
+[addRecord] 表 Student 行 Zhangsan 写入 3 个字段: info:S_No,info:S_Sex,info:S_Age
+[addRecord] 表 Student 行 Mary 写入 3 个字段: info:S_No,info:S_Sex,info:S_Age
+[addRecord] 表 Student 行 Lisi 写入 3 个字段: info:S_No,info:S_Sex,info:S_Age
+[addRecord] 表 Course 行 Math 写入 2 个字段: info:C_No,info:C_Credit
+[addRecord] 表 Course 行 Computer Science 写入 2 个字段: info:C_No,info:C_Credit
+[addRecord] 表 Course 行 English 写入 2 个字段: info:C_No,info:C_Credit
+[addRecord] 表 SC 行 Zhangsan 写入 2 个字段: Score:Math,Score:English
+[addRecord] 表 SC 行 Mary 写入 2 个字段: Score:Computer Science,Score:English
+[addRecord] 表 SC 行 Lisi 写入 2 个字段: Score:Math,Score:Computer Science
+
+========== 3. 三张表的全部数据 ==========
+---- 表 Student 的全部记录 ----
+  Lisi -> {info:S_Age=24, info:S_No=2015003, info:S_Sex=male}
+  Mary -> {info:S_Age=22, info:S_No=2015002, info:S_Sex=female}
+  Zhangsan -> {info:S_Age=23, info:S_No=2015001, info:S_Sex=male}
+---- 表 Course 的全部记录 ----
+  Computer Science -> {info:C_Credit=5.0, info:C_No=123002}
+  English -> {info:C_Credit=3.0, info:C_No=123003}
+  Math -> {info:C_Credit=2.0, info:C_No=123001}
+---- 表 SC 的全部记录 ----
+  Lisi -> {Score:Computer Science=95, Score:Math=98}
+  Mary -> {Score:Computer Science=77, Score:English=99}
+  Zhangsan -> {Score:English=69, Score:Math=86}
+
+========== 4. 浏览列 ==========
+---- 浏览表 Student 的列 [info] ----
+  Lisi -> {S_Age=24, S_No=2015003, S_Sex=male}
+  Mary -> {S_Age=22, S_No=2015002, S_Sex=female}
+  Zhangsan -> {S_Age=23, S_No=2015001, S_Sex=male}
+---- 浏览表 SC 的列 [Score:Math] ----
+  Lisi -> 98
+  Mary -> null
+  Zhangsan -> 86
+
+========== 5. 修改数据 ==========
+[modifyData] 表 SC 行 Zhangsan 列 Score:Math: 86 -> 90
+---- 浏览表 SC 的列 [Score:Math] ----
+  Lisi -> 98
+  Mary -> null
+  Zhangsan -> 90
+
+========== 6. 删除行（先插入一条临时记录再删除） ==========
+[addRecord] 表 Student 行 Wangwu 写入 3 个字段: info:S_No,info:S_Sex,info:S_Age
+[deleteRow] 已删除表 Student 中的行 Wangwu
+---- 表 Student 的全部记录 ----
+  Lisi -> {info:S_Age=24, info:S_No=2015003, info:S_Sex=male}
+  Mary -> {info:S_Age=22, info:S_No=2015002, info:S_Sex=female}
+  Zhangsan -> {info:S_Age=23, info:S_No=2015001, info:S_Sex=male}

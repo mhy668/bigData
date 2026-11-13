@@ -1,0 +1,70 @@
+HBase Shell
+Use "help" to get list of supported commands.
+Use "exit" to quit this interactive shell.
+For Reference, please visit: https://hbase.apache.org/docs/shell
+Version 2.5.16, r33c9a36af4fb6505196dcaa084ee2cf200071475, Fri Aug 14 12:53:27 PDT 2026
+hbase:001:0> puts ""
+
+hbase:002:0> puts "########## 任务3：向已有表添加 / 删除列族或列 ##########"
+########## 任务3：向已有表添加 / 删除列族或列 ##########
+hbase:003:0> puts "--- 添加列族 extra 并写入一列 ---"
+--- 添加列族 extra 并写入一列 ---
+hbase:004:0> alter 'Student', {NAME => 'extra'}
+Updating all regions with the new schema...
+1/1 regions updated.
+Done.
+hbase:005:0> put 'Student', 'Zhangsan', 'extra:phone', '13800001111'
+hbase:006:0> get 'Student', 'Zhangsan', {COLUMNS => 'extra:phone'}
+COLUMN  CELL
+ extra:phone timestamp=2026-11-13T14:01:51.182, value=13800001111
+1 row(s)
+hbase:007:0> puts "--- 删除列 extra:phone ---"
+--- 删除列 extra:phone ---
+hbase:008:0> delete 'Student', 'Zhangsan', 'extra:phone'
+hbase:009:0> scan 'Student', {COLUMNS => 'extra'}
+ROW  COLUMN+CELL
+0 row(s)
+hbase:010:0> puts "--- 删除列族 extra ---"
+--- 删除列族 extra ---
+hbase:011:0> alter 'Student', {NAME => 'extra', METHOD => 'delete'}
+Updating all regions with the new schema...
+1/1 regions updated.
+Done.
+hbase:012:0> puts "列族 extra 已删除"
+列族 extra 已删除
+hbase:013:0> puts ""
+
+hbase:014:0> puts "########## 任务4：清空指定表的所有记录数据 ##########"
+########## 任务4：清空指定表的所有记录数据 ##########
+hbase:015:0> if exists 'TempTable'
+  disable 'TempTable'
+  drop 'TempTable'
+end
+Table TempTable does exist
+hbase:019:0> create 'TempTable', {NAME => 'info'}
+Created table TempTable
+=> Hbase::Table - TempTable
+hbase:020:0> put 'TempTable', 'r1', 'info:c1', 'v1'
+hbase:021:0> put 'TempTable', 'r2', 'info:c1', 'v2'
+hbase:022:0> puts "--- 清空前 ---"
+--- 清空前 ---
+hbase:023:0> count 'TempTable'
+2 row(s)
+=> 2
+hbase:024:0> truncate 'TempTable'
+Truncating 'TempTable' table (it may take a while):
+Disabling table...
+Truncating table...
+hbase:025:0> puts "--- 清空后 ---"
+--- 清空后 ---
+hbase:026:0> count 'TempTable'
+0 row(s)
+=> 0
+hbase:027:0> puts ""
+
+hbase:028:0> puts "########## 任务5：统计表的行数 ##########"
+########## 任务5：统计表的行数 ##########
+hbase:029:0> count 'Student'
+3 row(s)
+=> 3
+hbase:030:0> exit

@@ -25,7 +25,15 @@
 │   ├── report/                   # 实验二报告（PDF / Word）
 │   └── README.md                 # 实验二说明
 │
-└── README.md                     # 本文件：两次实验的索引
+├── bigdata-lab3/                 # 实验三：HBase 操作与 PageRank 算法实现
+│   ├── code/                     # HBaseDemo.java、PageRankMR.java、pagerank.py
+│   ├── data/pagerank.txt         # 15 个网页的链接图
+│   ├── scripts/                  # 启动 HBase/YARN、HBase Java/Shell、PageRank 等脚本
+│   ├── results/                  # HBase 运行输出、MapReduce / Spark 的 PR 结果
+│   ├── report/                   # 实验三报告（PDF / Word）
+│   └── README.md                 # 实验三说明
+│
+└── README.md                     # 本文件：三次实验的索引
 ```
 
 ## 实验环境（两次实验共用）
@@ -42,5 +50,7 @@
   MapReduce 初级编程（合并去重、排序、祖孙关系挖掘）。
 - **实验二（bigdata-lab2/）**：从公开网页下载 12 篇英文文档并建立停词表，用 MapReduce 构建文档
   倒排索引，输出形如 `word <document01.txt,6>;<document02.txt,3>;<total,11>.`，并演示按单词检索。
+- **实验三（bigdata-lab3/）**：HBase 的 Shell 与 Java API 操作（关系表转 HBase 存储），以及用
+  MapReduce 与 Spark 两种方式实现 PageRank，迭代 10 次输出 `(网页,PR值)`（PR 保留 10 位小数）。
 
 各实验的详细说明、运行方法见对应目录下的 README.md。

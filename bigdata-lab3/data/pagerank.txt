@@ -1,0 +1,15 @@
+Hadoop	HDFS,MapReduce,YARN,Spark
+HDFS	Hadoop,YARN
+MapReduce	Hadoop,Spark,YARN
+YARN	Hadoop,HDFS
+Spark	Hadoop,MapReduce,Hive
+HBase	Hadoop,HDFS,ZooKeeper
+Hive	Hadoop,HDFS,Spark
+Pig	Hadoop,Hive
+Kafka	ZooKeeper,Storm,Spark
+ZooKeeper	HBase,Kafka
+Flink	Spark,Kafka
+Storm	Kafka,Flink
+Cassandra	HBase,ZooKeeper
+MongoDB	Cassandra,Redis
+Redis	Cassandra,MongoDB
