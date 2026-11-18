@@ -33,7 +33,15 @@
 │   ├── report/                   # 实验三报告（PDF / Word）
 │   └── README.md                 # 实验三说明
 │
-└── README.md                     # 本文件：三次实验的索引
+├── bigdata-lab4/                 # 实验四：并行化数据挖掘算法设计（K-Means 聚类）
+│   ├── code/                     # kmeans_serial.py（串行）、KMeansMR.java（并行）
+│   ├── data/                     # 数据集生成脚本 + 20000 个点的 points.csv
+│   ├── scripts/                  # 生成数据、串行运行、并行运行、结果对比脚本
+│   ├── results/                  # 两种实现的质心/簇规模/SSE/簇编号 + 对比结果
+│   ├── report/                   # 实验四报告（PDF / Word）
+│   └── README.md                 # 实验四说明
+│
+└── README.md                     # 本文件：四次实验的索引
 ```
 
 ## 实验环境（两次实验共用）
@@ -52,5 +60,7 @@
   倒排索引，输出形如 `word <document01.txt,6>;<document02.txt,3>;<total,11>.`，并演示按单词检索。
 - **实验三（bigdata-lab3/）**：HBase 的 Shell 与 Java API 操作（关系表转 HBase 存储），以及用
   MapReduce 与 Spark 两种方式实现 PageRank，迭代 10 次输出 `(网页,PR值)`（PR 保留 10 位小数）。
+- **实验四（bigdata-lab4/）**：K-Means 聚类的串行（Python）与并行（MapReduce）两种实现，
+  在 20000 个点的数据集上迭代 10 次，两种实现的质心、簇规模、SSE 与每个点的簇编号**逐字节一致**。
 
 各实验的详细说明、运行方法见对应目录下的 README.md。

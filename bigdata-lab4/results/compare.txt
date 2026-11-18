@@ -1,0 +1,15 @@
+== 对比两类实现的输出是否完全一致 ==
+  centroids: 完全一致（5 行）
+  sizes: 完全一致（5 行）
+  sse: 完全一致（1 行）
+  assignments: 完全一致（20000 行）
+
+== md5 校验（成对相同即逐字节一致） ==
+d3108b915b7b2b5699f1349f3ad51c96  results/serial_centroids.txt
+d3108b915b7b2b5699f1349f3ad51c96  results/parallel_centroids.txt
+b968cd2ead8e36694c82ecd367988f50  results/serial_sizes.txt
+b968cd2ead8e36694c82ecd367988f50  results/parallel_sizes.txt
+c0ef57e9425116952e86afb873b3b1c1  results/serial_sse.txt
+c0ef57e9425116952e86afb873b3b1c1  results/parallel_sse.txt
+3d0445c8001f407256851770efefd661  results/serial_assignments.txt
+3d0445c8001f407256851770efefd661  results/parallel_assignments.txt
